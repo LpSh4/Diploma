@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antique Auction House</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__container">
+      <div class="header__logo">Antique Auction House</div>
+      <nav class="nav" role="navigation" aria-label="Main site navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link nav__link--active" data-target="home">Home</a></li>
+          <li class="nav__item"><a href="#" class="nav__link" data-target="lots">Lots</a></li>
+          <li class="nav__item"><a href="#" class="nav__link" data-target="about">About</a></li>
+          <li class="nav__item"><a href="#" class="nav__link" data-target="contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="bid-icon" title="Your Bids" aria-label="View your bids" tabindex="0" role="button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+      <path d="M16.5 3h-9A2.5 2.5 0 005 5.5v13A2.5 2.5 0 007.5 21h9a2.5 2.5 0 002.5-2.5v-13A2.5 2.5 0 0016.5 3zm-2.5 13h-4v-2h4v2zm0-3h-4v-2h4v2zm0-3h-4V8h4v2z"/>
+    </svg>
+    <span class="bid-badge" id="bid-count" style="display:none;">0</span>
+  </div>
+  <main class="container" role="main">
+    <section id="home" class="page-section home page-section--active" aria-label="Home page">
+      <h1 class="home__title">Antique Auction House</h1>
+      <p class="home__subtitle">Discover timeless treasures and place your bids on exquisite antiques.</p>
+      <button class="button button--primary" id="btn-view-lots" data-target="lots" aria-controls="lots">View Auction Lots</button>
+    </section>
+    <section id="lots" class="page-section lots" aria-label="Auction lots">
+      <h2 class="lots__title">Current Auction Lots</h2>
+      <div class="lots__list" id="lots-list"></div>
+    </section>
+    <section id="bids" class="page-section bids" aria-label="Your bids" tabindex="0">
+      <h2 class="bids__title">Your Bids</h2>
+      <ul class="bids__list" id="bids-list"></ul>
+      <p class="bids__empty" id="bids-empty">You have not placed any bids yet.</p>
+      <button class="bids__btn-confirm button--primary button" id="bids-confirm-btn" aria-label="Confirm your bids"></button>
+    </section>
+    <section id="confirmation" class="page-section confirmation" aria-label="Bid confirmation" aria-live="polite">
+      <h2 class="confirmation__title">Bid Confirmation</h2>
+      <p class="confirmation__sequence" id="confirmation-sequence">Bid ID...</p>
+      <p class="confirmation__text" id="confirmation-text">Processing your bids...</p>
+      <p class="confirmation__total" id="confirmation-total">Total: $0</p>
+      <div class="confirmation__items" id="confirmation-items"></div>
+      <button class="confirmation__btn-back" id="confirmation-back-btn" aria-label="Return to lots">Return to Lots</button>
+    </section>
+    <section id="about" class="page-section about" aria-label="About the auction house">
+      <h2 class="about__title">About Our Auction House</h2>
+      <p class="about__text">
+        Antique Auction House is your premier destination for acquiring rare and valuable antiques. We curate a selection of timeless pieces, from vintage furniture to classic art, ensuring every lot tells a story.
+      </p>
+      <p class="about__text">
+        Our auctions are designed to be accessible and exciting, allowing collectors and enthusiasts to bid on unique items. Each piece is authenticated by our experts, guaranteeing quality and provenance.
+      </p>
+      <p class="about__text">
+        Join us to experience the thrill of the auction and own a piece of history. Whether you're a seasoned collector or a new bidder, we welcome you to explore our curated lots.
+      </p>
+    </section>
+    <section id="contacts" class="page-section contacts" aria-label="Contact information">
+      <h2 class="contacts__title">Contact Information</h2>
+      <div class="contacts__info">
+        <p class="contacts__text"><strong>Address:</strong> 123 Heritage Lane, London, UK</p>
+        <p class="contacts__text"><strong>Phone:</strong> +44 (0)20 1234 5678</p>
+        <p class="contacts__text"><strong>Email:</strong> contact@antiqueauctionhouse.com</p>
+        <p class="contacts__text"><strong>Hours:</strong> Mon-Sat: 09:00 - 18:00</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    © 2025 Antique Auction House. All rights reserved.
+  </footer>
+  <script src="script.js">
+  </script>
+</body>
+</html>

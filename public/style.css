@@ -1,0 +1,470 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background: #f5f1e9;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 60px;
+    }
+    .header {
+      background-color: #4a3728;
+      color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(74,55,40,0.5);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 64px;
+    }
+    .header__container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .header__logo {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: default;
+      user-select: none;
+    }
+    .nav__list {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav__item {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .nav__link {
+      color: #e6d9c6;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .nav__link:hover,
+    .nav__link--active {
+      background-color: #a68a64;
+      color: #4a3728;
+    }
+    .bid-icon {
+      position: fixed;
+      top: 64px;
+      right: 20px;
+      cursor: pointer;
+      color: #e6d9c6;
+      font-size: 28px;
+      width: 48px;
+      height: 48px;
+      background-color: #4a3728;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 6px rgba(74,55,40,0.4);
+      transition: background-color 0.3s ease;
+      z-index: 1100;
+    }
+    .bid-icon:hover {
+      background-color: #a68a64;
+      color: #4a3728;
+    }
+    .bid-icon svg {
+      fill: currentColor;
+      width: 24px;
+      height: 24px;
+    }
+    .bid-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background-color: #b22222;
+      color: white;
+      font-weight: 700;
+      font-size: 0.75rem;
+      border-radius: 50%;
+      padding: 3px 7px;
+      min-width: 20px;
+      height: 20px;
+      line-height: 14px;
+      text-align: center;
+      pointer-events: none;
+    }
+    .page-section {
+      display: none;
+      padding: 40px 0;
+    }
+    .page-section--active {
+      display: block;
+    }
+    .home {
+      background: url('content/images/main.jpg') center center/cover no-repeat;
+      height: 80vh;
+      color: #fff;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      position: relative;
+      transition: height 0.5s ease;
+    }
+    .home--reduced {
+      height: 40vh;
+    }
+    .home__title {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      font-family: 'Times New Roman', serif;
+    }
+    .home__subtitle {
+      font-size: 1.3rem;
+      max-width: 600px;
+    }
+    .button {
+      margin-top: 25px;
+      background-color: #a68a64;
+      color: #4a3728;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 5px 10px rgba(166,138,100,0.5);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .button:hover {
+      background-color: #8b6f47;
+      color: #fff;
+    }
+    .button--hidden {
+      display: none !important;
+    }
+    .lots {
+      max-width: 1200px;
+    }
+    .lots__title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    .lots__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .lot__item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(74,55,40,0.15);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lot__item:hover {
+      transform: translateY(-8px);
+    }
+    .lot__img {
+      border-radius: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .lot__item-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .lot__item-description {
+      font-size: 0.95rem;
+      color: #4a3728;
+      margin-bottom: 10px;
+    }
+    .lot__item-price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #a68a64;
+      margin-bottom: 10px;
+    }
+    .lot__item-bid {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .lot__btn-bid {
+      padding: 8px 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      font-size: 0.95rem;
+      background-color: #8b6f47;
+      color: white;
+    }
+    .lot__btn-bid:hover {
+      background-color: #a68a64;
+      color: #4a3728;
+    }
+    .bids {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .bids__title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+    .bids__list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    .bids__item {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(74,55,40,0.1);
+    }
+    .bids__item-info {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .bids__item-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .bids__item-amount {
+      font-size: 0.95rem;
+      color: #4a3728;
+    }
+    .bids__empty {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #4a3728;
+    }
+    .bids__btn-confirm {
+      display: block;
+      background-color: #8b6f47;
+      color: white;
+      padding: 14px 0;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .bids__btn-confirm:hover {
+      background-color: #a68a64;
+      color: #4a3728;
+    }
+    .confirmation {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .confirmation__title {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #4a3728;
+    }
+    .confirmation__text {
+      font-size: 1.2rem;
+      color: #4a3728;
+      margin-bottom: 20px;
+    }
+    .confirmation__sequence {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #a68a64;
+      margin-bottom: 20px;
+    }
+    .confirmation__total {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #a68a64;
+      margin-bottom: 20px;
+    }
+    .confirmation__items {
+      background: #fff7f0;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 13px rgba(74,55,40,0.1);
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .confirmation__item {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #4a3728;
+    }
+    .confirmation__item-price {
+      font-size: 0.95rem;
+      color: #a68a64;
+      margin-left: 20px;
+    }
+    .confirmation__btn-back {
+      background-color: #4a3728;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 700;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .confirmation__btn-back:hover {
+      background-color: #a68a64;
+      color: #4a3728;
+    }
+    .about {
+      background: #fff7f0;
+      border-radius: 15px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 15px rgba(74,55,40,0.1);
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+    .about__title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #4a3728;
+    }
+    .about__text {
+      font-size: 1.15rem;
+      color: #4a3728;
+      line-height: 1.7;
+    }
+    .contacts {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contacts__title {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #4a3728;
+    }
+    .contacts__text {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #4a3728;
+    }
+    .contacts__info {
+      background: #fff7f0;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 6px 13px rgba(74,55,40,0.1);
+    }
+    .contacts__info p {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    main.container {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    @media (max-width: 900px) {
+      .lots__list {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      }
+      .confirmation__items {
+        padding: 15px;
+      }
+    }
+    @media (max-width: 720px) {
+      .nav__list {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .header__container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      .header__logo {
+        font-size: 1.6rem;
+      }
+      .home__title {
+        font-size: 2.5rem;
+      }
+      .home__subtitle {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+      .lot__btn-bid {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+    }
+    @media (max-width: 480px) {
+      .lots__list {
+        grid-template-columns: 1fr;
+      }
+      .button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+      .about {
+        padding: 30px 20px;
+      }
+      .home {
+        height: 65vh;
+        padding: 0 15px;
+      }
+      .nav__link {
+        padding: 5px 8px;
+        font-size: 0.95rem;
+      }
+      .confirmation__items {
+        padding: 10px;
+      }
+    }
